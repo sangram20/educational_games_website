@@ -1,0 +1,124 @@
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+  
+#jstart{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 20px;
+    background-color: rgb(92, 116, 211);
+    border-radius: 80%;
+    top:0rem;
+}
+#jstart:hover{
+   
+    transition-duration: 0.4s;
+    background-color: rgb(215, 253, 143);
+}
+
+  @keyframes fromleft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.S {
+    animation: fromleft 2s ease-in-out, zoomIn 1s ease-in-out 2s;
+   
+    color:white;
+    
+}
+
+
+
+
+
+
+@keyframes fromtop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.U {
+    animation: fromtop 2s ease-in-out, zoomIn 1s ease-in-out 3s;
+    color: red;
+   
+    /* Wait for 1s after 'S' starts */
+}
+
+
+@keyframes fromright {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.DOKU {
+    animation: fromright 2s ease-in-out , zoomIn 1s ease-in-out 4s;
+    color: white;
+     /* Wait for 2s after 'U' starts */
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.s {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    margin-left: 120px;
+    font-size: 200px;
+}
+#image1{
+    animation: zoomIn 1s ease-in-out 5s;
+}
+
+/* Apply automatic zoom-in effect to each letter */
+
+.heading,.player.play{
+    border-collapse: collapse;
+    
+}
+
+#play:hover,#solution:hover{
+     background-color: blueviolet;    
+}
+#undo:hover,#hint:hover{
+ 
+    background-color: black;
+    cursor: pointer;
+}

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="sudoku.css">
+    <title>Document</title>
+</head>
+
+<body>
+        <a id="kstart" href="../../gamepage/games.html"><img src="tree.png" alt="" id="jstart"></a>
+
+    <div class="row">
+        <div class="SUDOKU" id="SUDOKU">
+            <div class="col-sm-12 heading" style=" background-color: BLACK; width: 100%; margin-top: 57px; "
+                id="heading">
+                <div class="container-fluid">
+                    <div class="s" style="display: flex; align-items: center;margin-left: 30%; ">
+                        <img src="https://www.maskecubos.com/4387-large_default/v-cube-sudoku-3x3.jpg" id="image1"
+                            alt="" style="width: 100px; height: 100px;">
+                        <h1 class="S" style="font-size: 100px; padding-left: 10px;">S</h1>
+                        <h1 class="U" style="font-size: 100px;">U</h1>
+                        <h1 class="DOKU" style="font-size: 100px;">DOKU</h1>
+                        <img src="https://www.maskecubos.com/4387-large_default/v-cube-sudoku-3x3.jpg" id="image1"
+                            alt="" style="width: 100px; height: 100px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 heading1 "
+                style="  font-size: 40px; background-color:gray; text-align: center; font-weight: bolder;"
+                id="heading1">
+                <div class="row" style=" padding: 50px;">
+                    <div class="col-md-6" id="info">
+                        <h1 style="margin-top: -30px;">SUDOKU</h1>
+                        <iframe src="info.txt" style="width: 100%; height: 100%; overflow: visible;"></iframe>
+
+                    </div>
+                    <div class="col-md-6" id="info-image">
+                        <img src="sudoku1.jpeg" alt="" style="mix-blend-mode: color-burn; width: 300px; height: 300px;">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 player" style="background-color: aqua; height: 1000px; border: 3px solid black; "
+                    id="player">
+                    <label for=""
+                        style=" border: 4px solid black; margin: auto; font-size: 40px; text-align: center; margin-top: 10px;"><mark
+                            id="solution" style="border: 2px solid black;cursor: pointer; "
+                            onclick="display_play()">PLAY</mark>➡️</label>
+                    <label style="font-size: 40px; text-align: center; font-weight: bolder ; padding-left:50px ;">
+                        FIND THE
+                        SOLUTION</label>
+                    <label style="width: 100%; border: 2px solid black;"></label>
+                    <label style="width: 100%; border: 2px solid black;"></label>
+
+
+                    <div class="sudoku" id="sudoku"
+                        style="display: flex; flex-direction: column; align-items: center; padding-top:20px ;">
+
+                        <div>
+                            <mark onclick="display_change()" style="cursor: pointer;">CHANGE🔃</mark>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <p style="letter-spacing: 20px; margin-left: 20px;">1 2 3 4 5 6 7 8 9</p>
+                            <table style="height: 300px; width: 450px; margin-top: 5PX; " class="tabel2" id="table2">
+
+
+                                <tr id="1">
+                                    <th><input type="text" id="10" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('10')">
+                                    </th>
+                                    <th><input type="text" id="11" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('11')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="12" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('12')">
+                                    </th>
+                                    <th><input type="text" id="13" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('13')">
+                                    </th>
+                                    <th><input type="text" id="14" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('14')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="15" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('15')">
+                                    </th>
+                                    <th><input type="text" id="16" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('16')">
+                                    </th>
+                                    <th><input type="text" id="17" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('17')">
+                                    </th>
+                                    <th><input type="text" id="18" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('18')">
+                                    </th>
+
+                                </tr>
+                                <tr id="2">
+                                    <th><input type="text" id="19" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('19')">
+                                    </th>
+                                    <th><input type="text" id="20" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('20')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="21" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('21')">
+                                    </th>
+                                    <th><input type="text" id="22" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('22')">
+                                    </th>
+                                    <th><input type="text" id="23" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('23')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="24" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('24')">
+                                    </th>
+                                    <th><input type="text" id="25" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('25')">
+                                    </th>
+                                    <th><input type="text" id="26" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('26')">
+                                    </th>
+                                    <th><input type="text" id="27" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('27')">
+                                    </th>
+
+                                </tr>
+                                <tr id="3" style="border-bottom:3px black solid ;">
+                                    <th><input type="text" id="28" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('28')">
+                                    </th>
+                                    <th><input type="text" id="29" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('29')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="30" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('30')">
+                                    </th>
+                                    <th><input type="text" id="31" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('31')">
+                                    </th>
+                                    <th><input type="text" id="32" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('32')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="33" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('33')">
+                                    </th style="border-right: 3px solid black; ">
+                                    <th><input type="text" id="34" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('34')">
+                                    </th>
+                                    <th><input type="text" id="35" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('35')">
+                                    </th>
+                                    <th><input type="text" id="36" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('36')">
+                                    </th>
+
+                                </tr>
+                                <tr id="4">
+                                    <th><input type="text" id="37" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('37')">
+                                    </th>
+                                    <th><input type="text" id="38" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('38')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="39" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('39')">
+                                    </th>
+                                    <th><input type="text" id="40" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('40')">
+                                    </th>
+                                    <th><input type="text" id="41" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('41')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="42" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('42')">
+                                    </th>
+                                    <th><input type="text" id="43" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('43')">
+                                    </th>
+                                    <th><input type="text" id="44" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('44')">
+                                    </th>
+                                    <th><input type="text" id="45" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('45')">
+                                    </th>
+
+                                </tr>
+                                <tr id="5">
+                                    <th><input type="text" id="46" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('46')">
+                                    </th>
+                                    <th><input type="text" id="47" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('47')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="48" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('48')">
+                                    </th>
+                                    <th><input type="text" id="49" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('49')">
+                                    </th>
+                                    <th><input type="text" id="50" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('50')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="51" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('51')">
+                                    </th>
+                                    <th><input type="text" id="52" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('52')">
+                                    </th>
+                                    <th><input type="text" id="53" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('53')">
+                                    </th>
+                                    <th><input type="text" id="54" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('54')">
+                                    </th>
+
+                                </tr>
+                                <tr id="6" style="border-bottom: 3px solid black;">
+                                    <th><input type="text" id="55" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('55')">
+                                    </th>
+                                    <th><input type="text" id="56" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('56')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="57" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('57')">
+                                    </th>
+                                    <th><input type="text" id="58" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('58')">
+                                    </th>
+                                    <th><input type="text" id="59" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('59')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="60" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('60')">
+                                    </th>
+                                    <th><input type="text" id="61" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('61')">
+                                    </th>
+                                    <th><input type="text" id="62" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('62')">
+                                    </th>
+                                    <th><input type="text" id="63" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('63')">
+                                    </th>
+
+                                </tr>
+                                <tr id="7">
+                                    <th><input type="text" id="64" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('64')">
+                                    </th>
+                                    <th><input type="text" id="65" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('65')">
+                                    </th>
+                                    <th style="border-right: 3px solid black;"><input type="text" id="66" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('66')">
+                                    </th>
+                                    <th><input type="text" id="67" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('67')">
+                                    </th>
+                                    <th><input type="text" id="68" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('68')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="69" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('69')">
+                                    </th>
+                                    <th><input type="text" id="70" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('70')">
+                                    </th>
+                                    <th><input type="text" id="71" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('71')">
+                                    </th>
+                                    <th><input type="text" id="72" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('72')">
+                                    </th>
+
+                                </tr>
+                                <tr id="8">
+                                    <th><input type="text" id="73" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('73')">
+                                    </th>
+                                    <th><input type="text" id="74" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('74')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="75" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('75')">
+                                    </th>
+                                    <th><input type="text" id="76" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('76')">
+                                    </th>
+                                    <th><input type="text" id="77" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('77')">
+                                    </th>
+                                    <th style="border-right: 3px solid black; "><input type="text" id="78" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku(78)">
+                                    </th>
+                                    <th><input type="text" id="79" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('79')">
+                                    </th>
+                                    <th><input type="text" id="80" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('80')">
+                                    </th>
+                                    <th><input type="text" id="81" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('81')">
+                                    </th>
+
+                                </tr>
+                                <tr id="9" style="border-bottom: 3px black solid;">
+                                    <th><input type="text" id="82" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('82')">
+                                    </th>
+                                    <th><input type="text" id="83" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('83')">
+                                    </th>
+                                    <th style="border-right: 3px solid black;"><input type="text" id="84" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px; "
+                                            oninput="check_sudoku('84')">
+                                    </th>
+                                    <th><input type="text" id="85" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('85')">
+                                    </th>
+                                    <th><input type="text" id="86" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('86')">
+                                    </th>
+                                    <th style="border-right: 3px solid black;"><input type="text" id="87" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('87')">
+                                    </th>
+                                    <th><input type="text" id="88" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('88')">
+                                    </th>
+                                    <th><input type="text" id="89" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('89')" onclick="hint(89)">
+                                    </th>
+                                    <th><input type="text" id="90" maxlength="1"
+                                            style=" box-sizing: border-box; width: 50px; height: 50px; text-align: center; font-size: 30px;"
+                                            oninput="check_sudoku('90')" onclick="hint(90)">
+                                    </th>
+
+                                </tr>
+                            </table>
+                            <div>
+                                <label for="" id="WIN_LOSE" style="font-size: xx-large; color: black;"></label>
+                            </div>
+                        </div>
+                        <div class="user-button">
+                            <label for="" id="undo" onclick="undo()"
+                                style="color: white; font-weight:bolder; font-size: 30px; margin-top: 20px; ">UNDO</label>
+
+
+                            <label onclick="hint()" id="hint"
+                                style="font-size: 30px; font-weight: bolder; color: white; margin-top: 20px; margin-left: 30px;">HINT<label
+                                    for=""><label style="color: black;">(</label>💡</label><sup id="hint_count"
+                                    style="color: black;">3</sup><label style="color: black;">)</label></label>
+
+
+                        </div>
+
+                        <div>
+                            <label for="" id="row_col" style="display: none;">ROW NO: <input type="number" maxlength="1"
+                                    style="text-align: center; width: 50px;" id="row_col1">COL NO:<input type="number"
+                                    id="row_col2" maxlength="1" style="width: 50px;"> </label>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 AI" style="background-color: pink; height: 1000px; border: 3px solid black; ">
+                    <label for=""
+                        style=" border: 4px solid black; margin: auto; font-size: 40px; text-align: center; margin-top: 10px;"><mark
+                            id="solution" style="border: 2px solid black; cursor: pointer;"
+                            onclick="display_solution()">SOLUTION</mark>➡️</label>
+
+                    <label style="font-size: 40px; text-align: center; font-weight: bolder; padding-left:30px ;">GET
+                        THE
+                        SOLUTON</label>
+                    <label style="width: 100%; border: 2px solid black;"></label>
+                    <label style="width: 100%; border: 2px solid black;"></label>
+                    <h1 style="margin-left: 250px;">THE SOLUTION</h1>
+
+                    <div class="destinationContainer" id="destinationContainer"
+                        style="display: flex; flex-direction: column; align-items: center;">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <script>
+        var randomPuzzle, randomSolution;
+
+        // Access the JSON data forwarded from Python
+
+        // Function to print the numbers from a matrix (array of arrays) with their indices
+        function display_play() {
+            fetch('sudoku_data.json') // Assuming the JSON file is in the same directory as your HTML file
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const puzzles = data.puzzles;
+                    const solutions = data.solutions;
+
+                    // Select a random index
+                    const randomIndex = Math.floor(Math.random() * puzzles.length);
+
+                    // Get the randomly selected puzzle and its solution
+                    randomPuzzle = puzzles[randomIndex];
+                    randomSolution = solutions[randomIndex];
+
+                    // Process and print the randomly selected puzzle and its solution
+                    console.log("Randomly Selected Puzzle:");
+                    printMatrixWithIndices(randomPuzzle);
+                    console.log("\nSolution:");
+                })
+                .catch(error => {
+                    console.error('There was a problem fetching or processing the data:', error);
+                });
+
+            function printMatrixWithIndices(matrix) {
+                matrix.forEach((row, rowIndex) => {
+                    row.forEach((number, columnIndex) => {
+                        const cellId = rowIndex * 9 + columnIndex + 10;
+                        console.log(row)
+                        const cell = document.getElementById(cellId);
+                        if (number != 0) {
+                            cell.value = number
+                            count_no = count_no + 1;
+                        }
+                    });
+                });
+                console.log(count_no)
+            }
+        }
+
+        function display_change() {
+            for (i = 10; i <= 90; i++) {
+                document.getElementById(i).value = ""
+            }
+
+            fetch('sudoku_data.json') // Assuming the JSON file is in the same directory as your HTML file
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const puzzles = data.puzzles;
+                    const solutions = data.solutions;
+
+                    // Select a random index
+                    const randomIndex = Math.floor(Math.random() * puzzles.length);
+
+                    // Get the randomly selected puzzle and its solution
+                    randomPuzzle = puzzles[randomIndex];
+                    randomSolution = solutions[randomIndex];
+
+                    // Process and print the randomly selected puzzle and its solution
+                    console.log("Randomly Selected Puzzle:");
+                    printMatrixWithIndices(randomPuzzle);
+                    console.log("\nSolution:");
+                })
+                .catch(error => {
+                    console.error('There was a problem fetching or processing the data:', error);
+                });
+
+            function printMatrixWithIndices(matrix) {
+                matrix.forEach((row, rowIndex) => {
+                    row.forEach((number, columnIndex) => {
+                        const cellId = rowIndex * 9 + columnIndex + 10;
+                        console.log(row)
+                        const cell = document.getElementById(cellId);
+                        if (number != 0) {
+                            cell.value = number
+                            count_no = count_no + 1;
+                        }
+                    });
+                });
+                console.log(count_no)
+            }
+        }
+        var count_no = 0
+
+
+        function display_solution() {
+            // Assuming randomSolution is already defined in your code
+            const solutionMatrix = randomSolution; // Assuming randomSolution is a 2D array representing the Sudoku solution
+
+            // Create a new table element
+            const table = document.createElement('table');
+            table.id = 'solutionTable'; // Set the ID for the new table
+
+            // Apply styles to the new table
+            table.style.borderCollapse = 'collapse';
+            table.style.border = '2px solid black';
+            table.style.marginTop = "70px"
+
+            // Iterate over each row in the solution matrix
+            solutionMatrix.forEach(rowData => {
+                // Create a new row element for the table
+                const tr = document.createElement('tr');
+
+                // Iterate over each number in the row
+                rowData.forEach(number => {
+                    // Create a new cell element for the row
+                    const td = document.createElement('td');
+
+                    // Apply cell styles
+                    td.style.boxSizing = 'border-box';
+                    td.style.width = '50px';
+                    td.style.height = '50px';
+                    td.style.textAlign = 'center';
+                    td.style.fontSize = '30px';
+                    td.style.border = '1px solid black';
+
+
+                    // Set the cell's text content to the number
+                    td.textContent = number;
+
+                    // Append the cell to the row
+                    tr.appendChild(td);
+                });
+
+                // Append the row to the table
+                table.appendChild(tr);
+            });
+
+            // Find the destination container where you want to display the table
+            const destinationContainer = document.getElementById('destinationContainer');
+
+            // Clear the destination container before appending the table
+            destinationContainer.innerHTML = '';
+
+            // Append the table to the destination container
+            destinationContainer.appendChild(table);
+        }
+
+        var count_no1 = 0, index, rowind, colind
+        function check_sudoku(indexStr) {
+
+
+            index = parseInt(indexStr, 10); // Convert the string to an integer
+            rowind = Math.floor((index - 1) / 9);
+            colind = (index - 1) % 9;
+
+            if (document.getElementById(index).value != randomSolution[rowind - 1][colind]) {
+                var tab = document.getElementById(index);
+                tab.style.color = "red";
+            }
+            else if (document.getElementById(index).value == randomSolution[rowind - 1][colind]) {
+                var tab = document.getElementById(index);
+                tab.style.color = "black";
+                count_no1 = count_no1 + 1;
+            }
+
+
+            if (count_no1 == 81 - count_no) {
+                document.getElementById("WIN_LOSE").innerHTML = "PLAYER WINS"
+
+            }
+
+
+        }
+        function undo() {
+            document.getElementById(index).value = ""
+        }
+        var row_col1, row_col2;
+        const hint_coun = 0
+
+        function hint() {
+            var row_col = document.getElementById("row_col")
+            if (row_col.style.display == "none") {
+                row_col.style.display = "flex"
+            }
+
+
+            const inputElement1 = document.getElementById('row_col1');
+            const inputElement2 = document.getElementById('row_col2');
+
+
+
+            inputElement1.addEventListener('input', function () {
+                if (this.value.length > 1) {
+                    this.value = this.value.slice(0, 1);
+                }
+            });
+            inputElement2.addEventListener('input', function () {
+                if (this.value.length > 1) {
+                    this.value = this.value.slice(0, 1);
+                }
+            });
+            if (hint_coun <= 3) {
+                const row = parseInt(inputElement1.value, 10); // Convert to integer
+                const col = parseInt(inputElement2.value, 10); // Convert to integer
+
+
+                // Update the value of the corresponding cell
+                const cellId = (row - 1) * 9 + col + 10;
+                document.getElementById(cellId - 1).value = randomSolution[row - 1][col - 1];
+
+                hint_coun = hint_coun + 1
+                document.getElementById("hint_count").innerHTML = document.getElementById("hint_count").innerHTML - 1
+            }
+            else {
+                window.alert("get premiun access")
+            }
+
+
+
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

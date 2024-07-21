@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="instructions.css">
+    <!-- <link rel="stylesheet" href="../index.css> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  #mynav{
+    visibility:hidden;
+    background-color: aliceblue;
+width: 30%;
+height:101vh;
+position: relative;
+padding: auto auto;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: start;
+gap: 1rem;
+padding: 1rem;
+top: -50px;
+opacity: 0;
+box-shadow:7px 0px 30px black;
+transition-duration: 1s;
+visibility: hidden;
+z-index: 4000;
+
+  }
+  h1:hover{
+   color: black;
+  }
+
+  .icon{
+    color: antiquewhite;
+    font-size: 2rem;
+    background-color:antiquewhite;
+  }
+</style>
+<body>
+  <div id="background-wrap">
+    <div class="bubble x1"></div>
+    <div class="bubble x2"></div>
+    <div class="bubble x3"></div>
+    <div class="bubble x4"></div>
+    <div class="bubble x5"></div>
+    <div class="bubble x6"></div>
+    <div class="bubble x7"></div>
+    <div class="bubble x8"></div>
+    <div class="bubble x9"></div>
+    <div class="bubble x10"></div>
+</div>
+
+<div class="icon" onclick="show()"><i class="fa-solid fa-bars"></i></div>
+<nav id="mynav">
+    <div class="icon2" onclick="show2()"><i class="fa-solid fa-bars"></i></div>
+    <h1><a href="../gamepage/games.html">GAMES</a></h1>
+    <h1><a href="../index.html">HOME</a></h1>
+    <h1><a href="../about_us/index.html">ABOUT US</a></h1>
+</nav>
+    <div class="full_ins">
+      <div id="typing_ins" class="ins">
+         <h1>TYPING GAME</h1>
+         <div class="instruction">
+            <p>1.Time will be 60 seconds.</p>
+            <p>2.Time will start when you press any key on your keyboard.</p>
+         </div>
+      </div>
+      <div id="quiz_ins" class="ins">
+        <h1>QUIZ</h1>
+        <div class="instruction">
+          <p>1.Quiz will start when you click the button of start.</p>
+          <p>2.Time for each question in 20 seconds.</p>
+          <p>3.You can select and change selected option untill time ends...</p>
+        </div>
+      </div>
+      <div id="sudoku_ins" class="ins">
+        <h1>SUDOKU</h1>
+        <div class="instruction">
+          <p>1.Click on genrate to genrate new sudoku.</p>
+          <p>2.Click on solution to view the solution..</p>
+        </div>
+      </div>
+    </div>
+
+  
+</body>
+<script src="../index.js"></script>
+</html>

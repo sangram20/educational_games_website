@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Typing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <a id="kstart" href="../../gamepage/games.html"><img src="tree.png" alt="" id="jstart"></a>
+
+    <!-- <div id="fasm" onclick="goback()"><i class="fa-solid fa-arrow-left"></i></div> -->
+    <div class="wrapper">
+        <input type="text" class="input-field">
+        <div class="content-box">
+            <div class="typing-text">
+                <p id="paragraph"></p>
+            </div>
+            <div class="content">
+                <ul class="result-details">
+                    <li class="time">
+                        <p>
+                            Time Left:
+                        </p>
+                        <span><b>60</b>s</span>
+                    </li>
+                    <li class="mistake">
+                        <p>
+                            Mistakes:
+                        </p>
+                        <span>0</span>
+                    </li>
+                    <li class="wpm">
+                        <p>
+                            WPM:
+                        </p>
+                        <span>0</span>
+                    </li>
+                    <li class="cpm">
+                        <p>
+                            CPM:
+                        </p>
+                        <span>0</span>
+                    </li>
+                </ul>
+                <button>Try Again</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function goback()
+    {
+        // Navigate to another page
+window.location.href = "../../gamepage/games.html";
+
+    }
+</script>
+<style>
+    #fasm{
+        background-color: white;
+        border-radius: 60%;
+        padding:5px 10px;
+        position: relative;
+        top: -250px;
+        font-size: 1.2rem;
+        left: -250px;
+    }
+
+    #fasm:hover{
+        background-color: rgb(0, 0, 0);
+        transition-duration: 0.4s;
+        cursor: pointer;
+        color: white;
+        
+    }
+</style>
+</html>

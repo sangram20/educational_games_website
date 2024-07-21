@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <a id="kstart" href="../../gamepage/games.html"><img src="tree.png" alt="" id="jstart"></a>
+    <div class="main_div">
+    <div class="domains">
+       <div class="formdiv">
+        <label for="select1">Select a number:</label>
+        <select id="select1" name="number">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <label for="select2">Select a subject:</label>
+        <select id="select2" name="subject">
+            <option value="Maths">Maths</option>
+            <option value="Algorithms">Algorithms</option>
+            <option value="data_Structures">Data Structures</option>
+            <option value="C_language">C Language</option>
+            <option value="python_Language">Python Language</option>
+        </select>
+        <button id="start_button" onclick="start1">
+            start Quiz
+        </button>
+       </div>
+    </div>
+
+    <div class="main_quiz">
+       <div class="question"><h1 id="question"></h1></div>
+       <div class="options">
+         <div class="option" onclick="set1()" id="option1"></div>
+         <div class="option" onclick="set2()" id="option2"></div>
+         <div class="option" onclick="set3()" id="option3"></div>
+         <div class="option" onclick="set4()" id="option4"></div>
+       </div>
+    </div>
+
+    
+    <div id="timer">
+        
+    </div>
+       
+
+
+    <div class="resultdiv">
+        <div id="resultdiv">
+         <p id="totalquestion">TOTAL QUESTIONS:</p>
+         <p id="correct_questions">CORRECT :</p>
+         <p id="wrong_questions">WRONG :</p>
+       </div>
+       <div id="replaydiv">
+         <div id="replay" onclick="reload()">REPLAY</div>
+         <div id="gamediv"><a href="../../gamepage/games.html">GAMES</a></div>
+         <div id="homebutton"><a href="../../index.html">HOME</a></div>
+       </div>
+    </div>
+    
+       
+    </div>
+</body>
+
+
+<script src="quiz.js"></script>
+
+</html>
